@@ -29,6 +29,14 @@ The same time, they mint debt token, which means they own the funders money.
 4. Funder can burn the debt token and get the funds back with interests.
 
 ## start
-```yarn```
-```anchor test```
+run
+```
+yarn
+```
+
+and run
+```
+anchor test
+```
+you'll see the result like the picture
 And make sure there is enough sol in your devnet account
