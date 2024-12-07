@@ -14,7 +14,7 @@ describe("amm", () => {
   // Configure the client to use the local cluster.
   anchor.setProvider(anchor.AnchorProvider.env());
 
-  const program = anchor.workspace.Amm as Program<AnchorAmm>;
+  const program = anchor.workspace.AnchorAmm as Program<AnchorAmm>;
 
   const [initializer, user] = [new Keypair(), new Keypair()];
 
@@ -187,7 +187,7 @@ describe("amm", () => {
         new BN(30),
         new BN(Math.floor(new Date().getTime()/1000) + 600)
       )
-      .accountsStrict({
+      .accounts({
         auth,
         user: initializer.publicKey,
         mintX: mint_x,

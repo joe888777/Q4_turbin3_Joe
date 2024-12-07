@@ -32,7 +32,7 @@ pub struct Initialize<'info> {
         seeds = [b"auth"],
         bump
     )]
-    ///Check this safe
+    /// CHECK this safe
     pub auth: UncheckedAccount<'info>,
 
     #[account(
