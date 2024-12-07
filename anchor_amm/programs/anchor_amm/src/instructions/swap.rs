@@ -40,6 +40,7 @@ pub struct Swap <'info> {
         seeds = [b"auth"],
         bump = config.auth_bump
     )]
+    /// CHECK: this is safe
     pub auth: UncheckedAccount<'info>,
     #[account(
         mut,
@@ -132,6 +133,7 @@ impl <'info> Swap <'info> {
         let ctx = CpiContext::new(self.token_program.to_account_info(), cpi_account);
         transfer_checked(ctx, amount, 6)
     }
+
     pub fn withdraw_token(&mut self, is_x: bool, amount: u64) -> Result<()> {
         let mint;
         let (from, to) = match is_x {

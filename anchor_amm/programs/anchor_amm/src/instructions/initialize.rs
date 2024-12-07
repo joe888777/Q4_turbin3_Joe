@@ -28,11 +28,11 @@ pub struct Initialize<'info> {
         associated_token::authority = auth
     )]
     pub vault_y: Box<InterfaceAccount<'info, TokenAccount>>,
-    //Check this safe
     #[account(
         seeds = [b"auth"],
         bump
     )]
+    ///Check this safe
     pub auth: UncheckedAccount<'info>,
 
     #[account(
@@ -59,13 +59,13 @@ impl <'info> Initialize <'info> {
         require!(fee <= 10000, AmmError::FeePercentErr);
         self.config.init(
             seed,
-            self.auth.key(),
+            authority,
             self.mint_x.key(),
             self.mint_y.key(),
             fee,
             false,
-            self.bumps.auth,
-            self.bumps.config
+            bumps.auth,
+            bumps.config
         );
 
         Ok(())

@@ -41,6 +41,7 @@ pub struct Deposit<'info> {
         seeds = [b"auth"],
         bump = config.auth_bump
     )]
+    /// CHECK: this is safe
     pub auth: UncheckedAccount<'info>,
     #[account(
         init_if_needed,
